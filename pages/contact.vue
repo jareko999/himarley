@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+const { gtag } = useGtag()
 
 const name = ref('')
 const email = ref('')
@@ -34,12 +35,10 @@ const submitForm = async () => {
       description.value = ''
       budget.value = ''
 
-      if (typeof window !== 'undefined') {
-        window.gtag('event', 'form_submit', {
-          event_category: 'Contact',
-          event_label: 'Work With Us Form'
-        })
-      }
+      gtag('event', 'form_submit', {
+        event_category: 'Contact',
+        event_label: 'Work With Us Form'
+      })
     }
   } catch (e) {
     console.error(e)

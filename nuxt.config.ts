@@ -31,7 +31,7 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.scss'],
   modules: ['nuxt-gtag'],
   gtag: {
-    id: 'G-XXXXXXXXXX'
+    id: 'G-YZEC4SLC2C'
   },
 
   postcss: {
