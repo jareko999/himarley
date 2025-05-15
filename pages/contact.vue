@@ -5,7 +5,6 @@ const { gtag } = useGtag()
 const name = ref('')
 const email = ref('')
 const description = ref('')
-const budget = ref('')
 
 const submitting = ref(false)
 const success = ref(false)
