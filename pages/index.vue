@@ -1,13 +1,8 @@
 <script setup>
 import { PhArrowRight, PhArrowUpRight } from '@phosphor-icons/vue/compact'
 import { sites } from '~/utils/sites'
-const { gtag } = useGtag()
 
 onMounted(() => {
-  gtag('event', 'ads_conversion_Contact_Us_1', {
-    event_category: 'Contact',
-    event_label: 'Work With Us Form'
-  })
   const container = document.querySelector('.background-dots')
   const numDots = 50
 
