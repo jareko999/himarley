@@ -25,9 +25,15 @@ export default defineNuxtConfig({
       ]
     },
   },
+
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
   css: ['~/assets/css/main.scss'],
+  modules: ['nuxt-gtag'],
+  gtag: {
+    id: 'G-XXXXXXXXXX'
+  },
+
   postcss: {
     plugins: {
       'postcss-import': {},
@@ -36,6 +42,7 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
+
   runtimeConfig: {
     mailersend: {
       apiKey: process.env.MAILERSEND_KEY // Ensure it's in the private section
