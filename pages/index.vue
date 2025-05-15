@@ -37,7 +37,7 @@ onMounted(() => {
         </Button>
       </div>
     </main>
-    <section>
+    <section class="mb-[80px]">
       <h2 class="mb-12 text-center">What we've built</h2>
       <div class="grid grid-cols-products gap-4 max-w-container m-auto p-4">
         <template v-for="site in sites" :key="site.key">
@@ -67,7 +67,17 @@ onMounted(() => {
           </div>
         </template>
       </div>
-
+    </section>
+    <section class="p-4 w-full max-w-article m-auto">
+      <h2 class="mb-12 text-center">Our team</h2>
+      <div class="grid grid-cols-cart w-full gap-6">
+        <img src="/images/fam.png" alt="" class="rounded-lg">
+        <section>
+          <h3>Jarek Ostrowski - Founder</h3>
+          <p class="mt-2">Jarek's been designing and developing apps for a decade. He has agency and startup experience, including 4 years at GitLab as a Product Designer working on their DevOps tools and design system. He went public with them in 2021.</p>
+          <p class="mt-2">He's a proud dad and loves family life.</p>
+        </section>
+      </div>
     </section>
   </div>
 </template>
