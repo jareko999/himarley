@@ -28,16 +28,18 @@ const submitForm = async () => {
     })
 
     if (res.ok) {
-      window.gtag('event', 'form_submit', {
-        event_category: 'Contact',
-        event_label: 'Work With Us Form'
-      })
-
       success.value = true
       name.value = ''
       email.value = ''
       description.value = ''
       budget.value = ''
+
+      if (typeof window !== 'undefined') {
+        window.gtag('event', 'form_submit', {
+          event_category: 'Contact',
+          event_label: 'Work With Us Form'
+        })
+      }
     }
   } catch (e) {
     console.error(e)
