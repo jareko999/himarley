@@ -4,7 +4,7 @@ export default defineEventHandler(async (event) => {
   const config = useRuntimeConfig();
   const apiKey = config.mailersend.apiKey;
 
-  const { email, name, description, budget } = await readBody(event);
+  const { email, name, description } = await readBody(event);
 
   const mailerSend = new MailerSend({ apiKey });
 
@@ -16,7 +16,6 @@ export default defineEventHandler(async (event) => {
     <p><strong>Name:</strong> ${name}</p>
     <p><strong>Email:</strong> ${email}</p>
     <p><strong>Description:</strong><br/>${description.replace(/\n/g, "<br/>")}</p>
-    <p><strong>Budget:</strong> ${budget}</p>
   `;
 
   const emailParams = new EmailParams()

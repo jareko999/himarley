@@ -23,8 +23,7 @@ const submitForm = async () => {
       body: JSON.stringify({
         email: email.value,
         name: name.value,
-        description: description.value,
-        budget: budget.value
+        description: description.value
       })
     })
 
@@ -33,7 +32,6 @@ const submitForm = async () => {
       name.value = ''
       email.value = ''
       description.value = ''
-      budget.value = ''
 
       gtag('event', 'form_submit', {
         event_category: 'Contact',
@@ -56,7 +54,6 @@ const submitForm = async () => {
       <input v-model="name" type="text" placeholder="Name" class="w-full border p-2 rounded" required />
       <input v-model="email" type="email" placeholder="Email" class="w-full border p-2 rounded" required />
       <textarea v-model="description" placeholder="Describe your project" class="w-full border p-2 rounded" rows="4" required />
-      <input v-model="budget" type="text" placeholder="Budget" class="w-full border p-2 rounded" />
       <button :disabled="submitting" type="submit" class="w-full bg-black text-white py-2 rounded hover:opacity-90">
         {{ submitting ? 'Sending...' : 'Send Message' }}
       </button>
