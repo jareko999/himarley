@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-const { gtag } = useGtag()
 
 const name = ref('')
 const email = ref('')
@@ -31,11 +30,6 @@ const submitForm = async () => {
       name.value = ''
       email.value = ''
       description.value = ''
-
-      gtag('event', 'form_submit', {
-        event_category: 'Contact',
-        event_label: 'Work With Us Form'
-      })
     }
   } catch (e) {
     console.error(e)
@@ -48,11 +42,10 @@ const submitForm = async () => {
 <template>
   <main class="min-h-screen w-full flex justify-center items-center px-4">
     <form @submit.prevent="submitForm" class="max-w-md w-full space-y-4 bg-white">
-      <h1 class="text-xl">Work with us</h1>
-      <p>Let us know what you want to build and we'll get back to you in 1 business day.</p>
+      <h1>Contact us</h1>
       <input v-model="name" type="text" placeholder="Name" class="w-full border p-2 rounded" required />
       <input v-model="email" type="email" placeholder="Email" class="w-full border p-2 rounded" required />
-      <textarea v-model="description" placeholder="Describe your project" class="w-full border p-2 rounded" rows="4" required />
+      <textarea v-model="description" placeholder="Enter your message" class="w-full border p-2 rounded" rows="4" required />
       <button :disabled="submitting" type="submit" class="w-full bg-black text-white py-2 rounded hover:opacity-90">
         {{ submitting ? 'Sending...' : 'Send Message' }}
       </button>

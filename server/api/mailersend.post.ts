@@ -8,11 +8,11 @@ export default defineEventHandler(async (event) => {
 
   const mailerSend = new MailerSend({ apiKey });
 
-  const sentFrom = new Sender("jarek@distromade.com", "We build AI apps");
+  const sentFrom = new Sender("jarek@distromade.com", "Cash'd AI");
   const recipients = [new Recipient("jarek@distromfg.com", "Jarek")];
 
   const html = `
-    <h2>New Contact Form Submission</h2>
+    <h2>Cash'd form submission</h2>
     <p><strong>Name:</strong> ${name}</p>
     <p><strong>Email:</strong> ${email}</p>
     <p><strong>Description:</strong><br/>${description.replace(/\n/g, "<br/>")}</p>
@@ -22,7 +22,7 @@ export default defineEventHandler(async (event) => {
     .setFrom(sentFrom)
     .setTo(recipients)
     .setReplyTo(new Sender(email, name))
-    .setSubject("New Contact Form Submission")
+    .setSubject("Cash'd AI - Contact Form Submission")
     .setHtml(html);
 
   await mailerSend.email.send(emailParams);

@@ -1,6 +1,5 @@
 <script setup>
 import { PhArrowRight, PhArrowUpRight } from '@phosphor-icons/vue/compact'
-import { sites } from '~/utils/sites'
 
 onMounted(() => {
   const container = document.querySelector('.background-dots')
@@ -23,62 +22,20 @@ onMounted(() => {
 
 <template>
   <div class="pb-[180px]">
-    <main class="relative overflow-hidden flex justify-center items-center p-4 min-h-[600px] bg-white mb-4">
+    <main class="relative overflow-hidden flex justify-center items-center p-4 min-h-[700px] bg-white mb-4">
       <div class="background-dots pointer-events-none absolute inset-0 z-0" />
-      <div class="text-center relative z-10">
-        <h1 class="text-[80px] max-md:text-3xl">We build AI Apps</h1>
-        <p class="mt-12 max-md:mt-4 max-w-[800px]">
-          We build AI apps and internal tools for startups and enterprises
+      <div class="flex flex-col items-center text-center relative z-10">
+        <h1 class="text-[56px]">Understand your money</h1>
+        <p class="mt-8 max-w-[500px]">
+          Stop sifting through bank statements. Just ask Cash'd about your money to understand how you spend in seconds.
         </p>
-        <Button to="/contact" text="Hire us" class="secondary m-auto mt-8">
+        <Button to="/contact" text="Contact us" class="secondary m-auto mt-8">
           <template #right-icon>
             <PhArrowRight :size="16" class="ml-2" />
           </template>
         </Button>
       </div>
     </main>
-    <section class="mb-[80px]">
-      <h2 class="mb-12 text-center">What we've built</h2>
-      <div class="grid grid-cols-products gap-4 max-w-container m-auto p-4">
-        <template v-for="site in sites" :key="site.key">
-          <NuxtLink
-            v-if="site.url"
-            class="border rounded-lg overflow-hidden text-black"
-            :to="site.url"
-          >
-            <img :src="site.image" alt="" class="w-full h-[240px] object-cover" />
-            <div class="p-4 flex flex-col">
-              <div class="flex w-full justify-between items-center">
-                <p class="text-md">{{ site.name }}</p>
-                <PhArrowUpRight :size="20" />
-              </div>
-              <p class="text-sm text-gray-500 mt-1">{{ site.description }}</p>
-            </div>
-          </NuxtLink>
-          <div
-            v-else
-            class="border rounded-lg overflow-hidden"
-          >
-            <img :src="site.image" alt="" class="w-full h-[240px] object-cover" />
-            <div class="p-4">
-              <p class="text-md text-black">{{ site.name }}</p>
-              <p class="text-sm text-gray-500 mt-1">{{ site.description }}</p>
-            </div>
-          </div>
-        </template>
-      </div>
-    </section>
-    <section class="p-4 w-full max-w-article m-auto">
-      <h2 class="mb-12 text-center">Our team</h2>
-      <div class="grid grid-cols-cart w-full gap-6">
-        <img src="/images/fam.png" alt="" class="rounded-lg">
-        <section>
-          <h3>Jarek Ostrowski - Founder</h3>
-          <p class="mt-2">Jarek's been designing and developing apps for a decade. He has agency and startup experience, including 4 years at GitLab as a Product Designer working on their DevOps tools and design system. He went public with them in 2021.</p>
-          <p class="mt-2">He's a proud dad and loves family life.</p>
-        </section>
-      </div>
-    </section>
   </div>
 </template>
 
