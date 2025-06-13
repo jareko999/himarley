@@ -59,7 +59,7 @@ onMounted(() => {
               <p>3. Request a pickup</p>
             </a>
           </p>
-          <p>4. Pay when we arrive (Cash or Card)</p>
+          <p>4. Pay when we arrive (Cash or Venmo)</p>
           <p>5. We take it to the dump</p>
         </div>
       </section>
