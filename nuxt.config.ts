@@ -10,15 +10,15 @@ export default defineNuxtConfig({
         // Open Graph (OG) tags
         { property: 'og:title', content: "Take my trash - Dump runs for $20" },
         { property: 'og:description', content: 'On demand trash pickup service serving Bedford, NH' },
-        { property: 'og:image', content: 'https://cashd.ai/images/twitter-card.png' },
-        { property: 'og:url', content: 'https://cashd.ai' },
+        { property: 'og:image', content: 'https://www.takemytrash.net/images/twitter-card.png' },
+        { property: 'og:url', content: 'https://www.takemytrash.net' },
         { property: 'og:type', content: 'website' },
 
         // Twitter Card tags
         { name: 'twitter:card', content: 'summary_large_image' },
         { name: 'twitter:title', content: "Take my trash - Dump runs for $20" },
         { name: 'twitter:description', content: 'On demand trash pickup service serving Bedford, NH' },
-        { name: 'twitter:image', content: 'https://cashd.ai/images/twitter-card.png' },
+        { name: 'twitter:image', content: 'https://www.takemytrash.net/images/twitter-card.png' },
       ],
       link: [
         { rel: 'icon', type: 'image/png', href: "/images/favicon.png" }
