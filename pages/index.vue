@@ -1,5 +1,5 @@
 <script setup>
-import { PhArrowRight, PhArrowUpRight } from '@phosphor-icons/vue/compact'
+import { PhChatCircleDots, PhMapPin } from '@phosphor-icons/vue/compact'
 
 onMounted(() => {
   const container = document.querySelector('.background-dots')
@@ -21,25 +21,35 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="pb-[180px]">
-    <main class="relative overflow-hidden flex justify-center items-center p-4 min-h-[700px] bg-white mb-4">
+  <div>
+    <h2 class="logo">TAKE MY TRASH</h2>
+    <main class="relative overflow-hidden flex justify-center items-center p-4 min-h-[600px] bg-white mb-4">
       <div class="background-dots pointer-events-none absolute inset-0 z-0" />
       <div class="flex flex-col items-center text-center relative z-10">
-        <h1 class="text-[56px]">Understand your money</h1>
-        <p class="mt-8 max-w-[500px]">
-          Stop sifting through bank statements. Just ask Cash'd about your money to understand how you spend in seconds.
+        <p class="badge mb-6 max-w-[500px]">
+          <PhMapPin :size="18" class="mr-1" />
+          Serving Bedford, NH
         </p>
-        <Button to="/contact" text="Contact us" class="secondary m-auto mt-8">
-          <template #right-icon>
-            <PhArrowRight :size="16" class="ml-2" />
-          </template>
-        </Button>
+        <h1 class="text-[56px]">Dump runs for $20</h1>
+        <p class="mt-4 max-w-[500px]">
+          We take your trash to the dump so you don't have to
+        </p>
+        <a href="sms:6034174461?body=Can%20you%20pick%20up%20my%20trash%20at%20" class="button secondary m-auto mt-8">
+          <PhChatCircleDots :size="20" class="mr-2" />
+          <p>Request pickup</p>
+        </a>
       </div>
     </main>
   </div>
 </template>
 
 <style>
+.logo {
+  margin-left: 24px;
+  margin-top: 16px;
+  font-size: 20px;
+  font-family: 'Shrikhand', sans-serif;
+}
 .background-dots {
   position: absolute;
   width: 100%;

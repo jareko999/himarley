@@ -50,7 +50,7 @@ export const theme = {
     lg: ['20px', '28px'],
     xl: ['24px', '32px'],
     '2xl': ['32px', '40px'],
-    '3xl': ['40px', '48px'],
+    '3xl': ['40px', '56px'],
   },
 };
 

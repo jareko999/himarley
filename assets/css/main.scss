@@ -1,11 +1,11 @@
 @tailwind base;
 @tailwind components;
-@import url('https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Shrikhand&display=swap');
 
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'Figtree', sans-serif;
 }
 
 * {
@@ -19,7 +19,7 @@ table,
 textarea,
 button,
 label {
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'Figtree', sans-serif;
   line-height: 1.8;
 }
 
@@ -28,7 +28,7 @@ svg {
 }
 
 h1, h2, h3, h4, h5 {
-  font-family: 'Funnel Display', sans-serif;
+  font-family: 'Shrikhand', sans-serif;
 }
 
 h1 {
@@ -100,12 +100,14 @@ button,
 }
 
 .badge {
+  display: flex;
+  align-items: center;
   background: rgb(233, 248, 255);
   box-shadow: inset 0 0 0 1px rgb(193, 222, 233);
   color: rgb(46, 46, 126);
   font-size: 14px;
   line-height: 1;
-  padding: 6px 8px;
+  padding: 8px 12px;
   border-radius: 1000px;
 
   &.active {

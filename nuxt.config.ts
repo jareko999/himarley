@@ -1,23 +1,23 @@
 export default defineNuxtConfig({
   app: {
     head: {
-      title: "Cash'd AI - Understand your money",
+      title: "Take my trash - Dump runs for $20",
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { name: 'description', content: 'Software development agency who builds AI apps for startups and businesses.' },
+        { name: 'description', content: 'On demand trash pickup service serving Bedford, NH' },
 
         // Open Graph (OG) tags
-        { property: 'og:title', content: "Cash'd AI - Understand your money" },
-        { property: 'og:description', content: 'Software development agency who builds AI apps for startups and businesses.' },
+        { property: 'og:title', content: "Take my trash - Dump runs for $20" },
+        { property: 'og:description', content: 'On demand trash pickup service serving Bedford, NH' },
         { property: 'og:image', content: 'https://cashd.ai/images/twitter-card.png' },
         { property: 'og:url', content: 'https://cashd.ai' },
         { property: 'og:type', content: 'website' },
 
         // Twitter Card tags
         { name: 'twitter:card', content: 'summary_large_image' },
-        { name: 'twitter:title', content: "Cash'd AI - Understand your money" },
-        { name: 'twitter:description', content: 'Software development agency who builds AI apps for startups and businesses.' },
+        { name: 'twitter:title', content: "Take my trash - Dump runs for $20" },
+        { name: 'twitter:description', content: 'On demand trash pickup service serving Bedford, NH' },
         { name: 'twitter:image', content: 'https://cashd.ai/images/twitter-card.png' },
       ],
       link: [
