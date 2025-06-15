@@ -45,7 +45,7 @@ onMounted(() => {
           </p>
           <a href="sms:6034174461?body=Can%20you%20pickup%20my%20trash%3F%20It%27s%20located%20at%3A%20" class="button secondary m-auto mt-8">
             <PhChatCircleDots :size="20" class="mr-2" />
-            <p>Text for pickup</p>
+            <p>Text for a pickup</p>
           </a>
         </div>
       </section>
