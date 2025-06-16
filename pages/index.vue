@@ -137,7 +137,7 @@ onMounted(() => {
       <div class="space-y-[80px]">
         <section id="how-it-works" class="text-[18px] w-full">
           <h2 class="text-center">How it works</h2>
-          <div class="m-auto w-max mt-6 p-8 shadow-lg shadow-gray-300 rounded-xl">
+          <div class="m-auto w-max mt-6 p-8 shadow-lg shadow-gray-300 rounded-xl bg-white">
             <p>1. Tie up your trash</p>
             <p>2. Put in an accessible location</p>
             <p> 
