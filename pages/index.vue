@@ -124,10 +124,14 @@ onMounted(() => {
             <PhChatCircleDots :size="20" class="mr-2" />
             <p>Text for a pickup</p>
           </a>
-          <div v-else class="flex items-center mt-4 shadow-lg rounded-full px-6 py-4 text-red-800">
-            <PhCalendarX :size="20" class="mr-2 shrink-0" />
-            <p>Dump is currently closed. Try again {{ nextAvailable }}.</p>
-          </div>
+          <a 
+            v-else
+            href="sms:6034174461?body=I%27d%20like%20to%20schedule%20a%20trash%20pickup%20on%3A%20" 
+            class="button secondary m-auto mt-6"
+          >
+            <PhChatCircleDots :size="20" class="mr-2" />
+            <p>Text to schedule a pickup</p>
+          </a>
         </div>
       </section>
       <div class="space-y-[80px]">
