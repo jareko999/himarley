@@ -76,7 +76,44 @@ useHead({
         },
         "telephone": "+16034174461",
         "areaServed": "Bedford, NH",
-        "serviceType": "On-demand residential trash pickup"
+        "serviceType": "On-demand residential trash pickup",
+        "mainEntity": {
+          "@type": "HowTo",
+          "name": "How to schedule a trash pickup",
+          "description": "Step-by-step instructions for how trash pickup works with Take My Trash in Bedford, NH.",
+          "step": [
+            {
+              "@type": "HowToStep",
+              "position": 1,
+              "name": "Tie up your trash",
+              "text": "Secure your trash bags to keep everything contained."
+            },
+            {
+              "@type": "HowToStep",
+              "position": 2,
+              "name": "Put trash in an accessible location",
+              "text": "Leave bags where we can easily pick them up — front of house or driveway."
+            },
+            {
+              "@type": "HowToStep",
+              "position": 3,
+              "name": "Request a pickup",
+              "text": "Text 603-417-4461 with your address and pickup time."
+            },
+            {
+              "@type": "HowToStep",
+              "position": 4,
+              "name": "Pay on arrival",
+              "text": "You can pay with cash or Venmo when we arrive."
+            },
+            {
+              "@type": "HowToStep",
+              "position": 5,
+              "name": "We haul it to the dump",
+              "text": "That’s it — your trash is gone."
+            }
+          ]
+        }
       }),
     },
   ],
