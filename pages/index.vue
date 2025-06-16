@@ -1,5 +1,5 @@
 <script setup>
-import { PhChatCircleDots, PhMapPin, PhCalendarX } from '@phosphor-icons/vue/compact'
+import { PhChatCircleDots } from '@phosphor-icons/vue/compact'
 const showPickupButton = ref(false)
 
 const transferStationHours = {
@@ -11,35 +11,6 @@ const transferStationHours = {
   5: { open: '08:30', close: '17:00' },
   6: { open: '06:30', close: '15:00' },
 }
-
-
-const nextAvailable = computed(() => {
-  const now = new Date()
-
-  for (let i = 0; i < 7; i++) {
-    const testDate = new Date(now)
-    testDate.setDate(now.getDate() + i)
-    const dow = testDate.getDay()
-    const hours = transferStationHours[dow]
-    if (!hours) continue
-
-    const open = parseTimeToDate(hours.open, testDate)
-    open.setMinutes(open.getMinutes() - 15) // buffer before open
-
-    if (i === 0 && now > open) continue // skip today if too late
-
-    const options = {
-      weekday: 'long',
-      hour: 'numeric',
-      minute: 'numeric',
-      hour12: true,
-    }
-
-    return open.toLocaleString('en-US', options)
-  }
-
-  return 'Unavailable'
-})
 
 function parseTimeToDate(timeStr, day) {
   const [hours, minutes] = timeStr.split(':').map(Number)
@@ -88,6 +59,29 @@ onMounted(() => {
     container?.appendChild(dot)
   }
 })
+
+useHead({
+  script: [
+    {
+      type: 'application/ld+json',
+      children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Take My Trash",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Bedford",
+          "addressRegion": "NH",
+          "postalCode": "03110"
+        },
+        "telephone": "+16034174461",
+        "areaServed": "Bedford, NH",
+        "serviceType": "On-demand residential trash pickup"
+      }),
+    },
+  ],
+})
+
 </script>
 
 <template>
@@ -110,7 +104,7 @@ onMounted(() => {
         <div class="flex flex-col items-center text-center relative z-10">
           <div class="mb-4 max-w-[500px] flex items-center">
             <div :class="['available-dot', showPickupButton ? 'available' : 'unavailable']"></div>
-            <p>{{ showPickupButton ? "Available" : "Unavailable" }}</p>
+            <p>{{ showPickupButton ? "Available" : "Dump is closed" }}</p>
           </div>
           <h1 class="text-[56px]">Dump runs for $20</h1>
           <p class="mt-4 max-w-[500px]">
