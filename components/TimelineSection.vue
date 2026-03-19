@@ -22,8 +22,6 @@ const imagePaths = computed(() => getSectionImagePaths(props.section))
     :class="{
       'timeline-section--visible': phase === 'active',
       'timeline-section--exit': phase === 'after',
-      'timeline-section--content-left': contentOrder === 1,
-      'timeline-section--content-right': contentOrder === 2,
     }"
   >
     <div
@@ -43,7 +41,7 @@ const imagePaths = computed(() => getSectionImagePaths(props.section))
   </section>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 .timeline-section {
   display: grid;
   grid-template-columns: 1fr;
@@ -56,13 +54,26 @@ const imagePaths = computed(() => getSectionImagePaths(props.section))
   margin: 0 auto;
   padding-left: max(2rem, env(safe-area-inset-left));
   padding-right: max(2rem, env(safe-area-inset-right));
-}
 
-@media (min-width: 768px) {
-  .timeline-section {
+  @media (min-width: 768px) {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: 8rem;
     padding: 10rem 0;
+  }
+
+  &:not(.timeline-section--visible) .timeline-section__carousel {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  &.timeline-section--visible .timeline-section__carousel {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  &.timeline-section--exit .timeline-section__carousel {
+    opacity: 0;
+    transform: translateY(-16px);
   }
 }
 
@@ -73,21 +84,5 @@ const imagePaths = computed(() => getSectionImagePaths(props.section))
   transition:
     opacity 0.6s var(--ease),
     transform 0.6s var(--ease);
-}
-
-.timeline-section:not(.timeline-section--visible) .timeline-section__carousel {
-  opacity: 0;
-  transform: translateY(16px);
-}
-
-.timeline-section.timeline-section--visible .timeline-section__carousel {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Fade out: when leaving, reverse (up and away) */
-.timeline-section.timeline-section--exit .timeline-section__carousel {
-  opacity: 0;
-  transform: translateY(-16px);
 }
 </style>

@@ -68,7 +68,7 @@ onMounted(() => {
   </section>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 .timeline-hero {
   position: relative;
   min-height: 100vh;
@@ -94,13 +94,13 @@ onMounted(() => {
   aspect-ratio: 1;
   animation: heroFloat var(--duration, 5s) linear var(--delay, 0s) infinite;
   opacity: 0;
-}
 
-.timeline-hero__bg-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
 }
 
 @keyframes heroFloat {
@@ -108,30 +108,11 @@ onMounted(() => {
     opacity: 0;
     transform: translateY(var(--start-y, 100%));
   }
-  40% {
-    opacity: 1;
-  }
-  60% {
-    opacity: 1;
-  }
+  40% { opacity: 1; }
+  60% { opacity: 1; }
   100% {
     opacity: 0;
     transform: translateY(calc(var(--start-y, 100%) - 500px));
-  }
-}
-
-@keyframes indicatorBounce {
-  from {
-    transform: translateY(-48px);
-    opacity: 0;
-  }
-  50% {
-    transform: translateY(0px);
-    opacity: 1;
-  }
-  to {
-    transform: translateY(0px);
-    opacity: 1;
   }
 }
 </style>

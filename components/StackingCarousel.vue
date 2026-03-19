@@ -95,7 +95,7 @@ onUnmounted(() => {
   </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 .stacking-carousel {
   position: relative;
   width: auto;
@@ -111,43 +111,43 @@ onUnmounted(() => {
   inset: 0;
   border-radius: 16px;
   height: 100%;
-  transition: 1s var(--ease);
-}
+  transition: .6s var(--ease);
 
-.stacking-carousel__card--current {
-  transform: translateY(0) scale(1);
-  opacity: 1;
-}
+  &--current {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
 
-.stacking-carousel__card--behind {
-  transform: translateY(-64px) scale(.9);
-  transform-origin: bottom;
-  pointer-events: none;
-  opacity: .6;
-  transition: 1s var(--ease);
-}
+  &--behind {
+    transform: translateY(-64px) scale(.9);
+    transform-origin: bottom;
+    pointer-events: none;
+    opacity: .6;
+    transition: .6s var(--ease);
+  }
 
-.stacking-carousel__card--exit-up {
-  transform: translateY(-80px) scale(.8);
-  transform-origin: bottom;
-  opacity: 0;
-  pointer-events: none;
-  transition:
-    transform 1s var(--ease),
-    opacity 0s linear;
-}
+  &--exit-up {
+    transform: translateY(-80px) scale(.8);
+    transform-origin: bottom;
+    opacity: 0;
+    pointer-events: none;
+    transition:
+      transform .6s var(--ease),
+      opacity 0s linear;
+  }
 
-.stacking-carousel__card--next {
-  transform: translateY(100%) scale(1);
-  pointer-events: none;
-}
+  &--next {
+    transform: translateY(100%) scale(1);
+    pointer-events: none;
+  }
 
-.stacking-carousel__card--hidden {
-  transform: translateY(100%);
-  opacity: 0;
-  pointer-events: none;
-  visibility: hidden;
-  transition: none;
+  &--hidden {
+    transform: translateY(100%);
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    transition: none;
+  }
 }
 
 .stacking-carousel__img {

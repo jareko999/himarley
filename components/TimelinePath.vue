@@ -41,7 +41,7 @@ const pathD = computed(() => {
   </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 .timeline-path {
   position: absolute;
   top: 0;
@@ -57,10 +57,8 @@ const pathD = computed(() => {
   left: 12px;
   width: 2px;
   height: 100%;
-}
 
-@media (min-width: 768px) {
-  .timeline-path__svg {
+  @media (min-width: 768px) {
     left: 50%;
     transform: translateX(-50%);
   }
@@ -69,5 +67,4 @@ const pathD = computed(() => {
 .timeline-path__line {
   transition: none;
 }
-
 </style>

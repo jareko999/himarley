@@ -109,7 +109,7 @@ onUnmounted(() => {
   </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 .timeline-page {
   position: relative;
   min-height: 100vh;
@@ -142,7 +142,6 @@ onUnmounted(() => {
 .timeline-sticky-dot {
   position: sticky;
   top: 50vh;
-  /* Mobile: align center with path (path is left: 12px, width: 2px → center 13px) */
   left: 13px;
   width: 12px;
   height: 12px;
@@ -151,25 +150,23 @@ onUnmounted(() => {
   transform: translate(-50%, -50%);
   pointer-events: none;
   z-index: 2;
-}
 
-@media (min-width: 768px) {
-  .timeline-sticky-dot {
+  @media (min-width: 768px) {
     left: 50%;
   }
-}
 
-.timeline-sticky-dot::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 9999px;
-  background: #000;
-  opacity: 0.5;
-  animation: pulse 3s var(--ease) infinite;
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 9999px;
+    background: #000;
+    opacity: 0.5;
+    animation: pulse 3s var(--ease) infinite;
+  }
 }
 
 @keyframes pulse {

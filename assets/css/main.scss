@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
-@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Shrikhand&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
 
 :root {
   --ease: cubic-bezier(0, 0, 0, 1);
@@ -10,36 +10,14 @@
   --muted-2: #475569;
 }
 
-body {
-  margin: 0;
-  -webkit-font-smoothing: antialiased;
-  font-family: 'Figtree', sans-serif;
-}
-
-.timeline-page {
-  font-family: 'Geist', sans-serif;
-}
-
-.timeline-page p,
-.timeline-page a,
-.timeline-page button,
-.timeline-page label {
-  font-family: 'Geist', sans-serif;
-}
-
 * {
   box-sizing: border-box;
 }
 
-p,
-input,
-a,
-table,
-textarea,
-button,
-label {
-  font-family: 'Figtree', sans-serif;
-  line-height: 1.8;
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Geist', sans-serif;
 }
 
 svg {
@@ -50,115 +28,12 @@ h1, h2, h3, h4, h5 {
   font-family: 'Shrikhand', sans-serif;
 }
 
-h1 {
-  @apply text-3xl;
-}
+h1 { @apply text-3xl; }
+h2 { @apply text-2xl; }
+h3 { @apply text-xl; }
 
-h2 {
-  @apply text-2xl;
-}
-
-h3 {
-  @apply text-xl;
-}
-
-a {
-  @apply text-blue-800;
-
-  &.button {
-    text-decoration: none;
-  }
-}
-
-button,
-.button {
-  display: flex;
-  border-radius: 6px;
-  padding: 8px 16px;
-  align-items: center;
-  background: rgb(29, 28, 29);
-  color: white;
-  transition: .2s ease-out;
-  justify-content: center;
-  width: fit-content;
-
-  &.secondary {
-    box-shadow: inset 0 0 0 1px #cccccc;
-    background: white;
-    color: black;
-
-    &:hover {
-      background: black;
-      box-shadow: inset 0 0 0 1px #000000;
-      color: white; 
-    }
-  }
-
-  &.medium {
-    padding: 12px;
-  }
-
-  &:hover {
-    background: rgb(62, 61, 62); 
-  }
-
-  &:disabled {
-    opacity: .4;
-    cursor: not-allowed;
-  }
-}
-
-@keyframes bears {
-  from {
-    left: 0;
-  }
-
-  to {
-    left: -100%;
-  }
-}
-
-.badge {
-  display: flex;
-  align-items: center;
-  background: rgb(233, 248, 255);
-  box-shadow: inset 0 0 0 1px rgb(193, 222, 233);
-  color: rgb(46, 46, 126);
-  font-size: 14px;
-  line-height: 1;
-  padding: 8px 12px;
-  border-radius: 1000px;
-
-  &.active {
-    background: #91ae26;
-    color: white;
-  }
-
-  &.stage {
-    color: white;
-
-    &.start {
-      background: rgb(88, 173, 88);
-    }
-
-    &.grow {
-      background: rgb(119, 52, 206);
-    }
-
-    &.advance {
-      background: rgb(8, 144, 207);
-    }
-  }
-
-  &.large {
-    padding: 16px;
-    font-size: 14px;
-  }
-
-  &.in-progress {
-    background: #e07352;
-    color: white;
-  }
+.timeline-page {
+  font-family: 'Geist', sans-serif;
 }
 
 @tailwind utilities;
