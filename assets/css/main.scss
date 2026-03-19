@@ -1,11 +1,30 @@
 @tailwind base;
 @tailwind components;
 @import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Shrikhand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
+
+:root {
+  --ease: cubic-bezier(0, 0, 0, 1);
+  --ink: #0f172a;
+  --muted: #64748b;
+  --muted-2: #475569;
+}
 
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   font-family: 'Figtree', sans-serif;
+}
+
+.timeline-page {
+  font-family: 'Geist', sans-serif;
+}
+
+.timeline-page p,
+.timeline-page a,
+.timeline-page button,
+.timeline-page label {
+  font-family: 'Geist', sans-serif;
 }
 
 * {

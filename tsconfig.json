@@ -1,6 +1,8 @@
 {
+  "extends": "./.nuxt/tsconfig.json",
   "compilerOptions": {
-    "types": ["@types/node"]
+    "types": ["@types/node"],
+    "baseUrl": "."
   },
   "include": ["types", "nuxt.config.ts", "app.vue", "components", "pages", "plugins"]
 }
